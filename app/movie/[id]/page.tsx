@@ -15,6 +15,7 @@ async function MoviePage({
   };
 }) {
   const movies = db.collection("movies");
+
   const search = await movies.find({ $and: [{ _id: id }] });
 
   if (!(await search.hasNext())) {

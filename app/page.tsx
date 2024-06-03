@@ -6,9 +6,9 @@ import { Movie } from "@/types";
 export const revalidate = 60 * 60 * 24;
 
 export default async function Home() {
-  const messages = db.collection("movies");
+  const movies = db.collection("movies");
 
-  const allMovies = (await messages
+  const allMovies = (await movies
     .find(
       {},
       {
